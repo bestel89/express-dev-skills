@@ -6,6 +6,13 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h2>We've compiled some of the sickest skills out there into an array of objects:</h2>
+    <ul>
+      <% skills.forEach(function(element) { %>
+        <li>
+          <a href="/<%= element.id %>"><%= element.name %></a>
+        </li>
+      <% }) %>
+    </ul>
   </body>
 </html>
