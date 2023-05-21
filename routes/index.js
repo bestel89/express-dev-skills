@@ -2,19 +2,22 @@ var express = require('express');
 var router = express.Router();
 
 //! Custom modules
-const {index, show, new: newSkill, create} = require('../controllers/index')
+const skillsCtrl = require('../controllers/index')
 
 /* GET home page. */
-router.get('/', index)
+router.get('/', skillsCtrl.index)
 
 // GET /new
-router.get('/new', newSkill)
+router.get('/new', skillsCtrl.new)
 
 // GET /:id
-router.get('/:id', show)
+router.get('/:id', skillsCtrl.show)
 
 // POST /
-router.post('/', create)
+router.post('/', skillsCtrl.create)
+
+// POST / DELETE
+router.delete('/:id', skillsCtrl.delete)
 
 
 
